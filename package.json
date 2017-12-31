@@ -1,0 +1,24 @@
+{
+  "name": "pubg_bot",
+  "version": "1.0.0",
+  "description": "Bot de League of Legends para o Telegram.",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelvicio/PUBG_BOT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelvicio/PUBG_BOT/issues"
+  },
+  "homepage": "https://github.com/rafaelvicio/PUBG_BOT#readme"
+}
