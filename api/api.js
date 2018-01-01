@@ -1,22 +1,15 @@
-const http = require( `axios` )
 const api_key =  require('../api/api')
 
-const getData = () =>
-console.log('123123' + api_key)
-http.get('https://api.pubgtracker.com/v2/profile/pc/VissGames', {
-    params: {
-        region: 'sa',
-        season: '2017-pre4'
-    },
-    headers: {
-        'TRN-Api-Key': api_key
-    }
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+const {PubgAPI, PubgAPIErrors, REGION, SEASON, MATCH} = require('pubg-api-redis');
 
-  module.exports = getData
+// If no Redis configuration it wont be cached
+const api = new PubgAPI({
+  apikey: api_key,
+  redisConfig: {
+    host: '127.0.0.1',
+    port: 6379,
+    expiration: 300, // Optional - defaults to 300.
+  },
+});
+
+module.exports = api
