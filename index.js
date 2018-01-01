@@ -1,5 +1,5 @@
 const bot = require('./config/bot')
 
-const start = require('./modulos/start')
+const status = require('./modulos/status')
 
-bot.onText( /\/start (.*)/, start)
+bot.onText( /\/status (.*)/, status)
