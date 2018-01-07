@@ -1,5 +1,7 @@
 const bot = require('./config/bot')
 
-const status = require('./modulos/status')
+const profile = require('./modulos/profile')
+const matches = require('./modulos/matches')
 
-bot.onText( /\/status (.*)/, status)
+bot.onText( /\/profile (.*)/, profile)
+bot.onText( /\/matches (.*)/, matches)

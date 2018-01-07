@@ -8,7 +8,7 @@ const sendStatus = ( msg, match ) =>
 axios.get(url + match[1], {
     params: {
         region: 'sa',
-        season: '2017-pre6',
+        season: '2018-01',
     },
     headers: {
         'TRN-Api-Key': api_key
@@ -18,22 +18,21 @@ axios.get(url + match[1], {
       if(response.data.code){
         bot.sendMessage( msg.chat.id, response.data.error + ` Code error: ` + response.data.code)
         .then(
-            console.log(`>>>>>` + response.data.error + `>>>>>` + response.data.code)
+            console.log(`>>>>> ` + response.data.error + `>>>>> ` + response.data.code)
         )
         .catch()
       } else {
         console.log(response.data)
         bot.sendMessage( msg.chat.id, "O jogador " + response.data.nickname + ` possui os seguintes status \n`
                         + `\n`
-                        + `[NA - Solo]: \n`
+                        + `[SA - Solo]: \n`
                         + `K/D Ratio: ` + response.data.stats[0].stats[0].value + `\n`
                         + `Win %: ` + response.data.stats[0].stats[1].value + `\n`
                         + `Time Survived: ` + response.data.stats[0].stats[2].value + `\n`
                         + `Rounds Played: ` + response.data.stats[0].stats[3].value + `\n`
                         + `Wins: ` + response.data.stats[0].stats[4].value + `\n`
-                        + `Win Top 10 Ratio: ` + response.data.stats[0].stats[5].value + `\n`
+                        + `Win Top 10 Ratio: ` + response.data.stats[0].stats[5].value + `\n`+ '%'
                         + `Top 10s: ` + response.data.stats[0].stats[6].value + `\n`
-                        + `Top 10 Rate: ` + response.data.stats[0].stats[6].value  + `\n`
                     )
         .then()
         .catch()
